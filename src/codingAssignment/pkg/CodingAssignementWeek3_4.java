@@ -10,11 +10,11 @@ public class CodingAssignementWeek3_4 {
  // #1   
     //a.
     int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
-    System.out.println("#1 a. answer: "+ sumOfFirstAndLast(ages));
+    System.out.println("#1 a. answer: "+ subtractFirstFromLast(ages));
     
     //b. added an additional age to show my method works all the time
     int[] agesTwo = {3, 9, 23, 64, 2, 8, 28, 93, 101};
-    System.out.println("#1 b. answer: "+ sumOfFirstAndLast(agesTwo));
+    System.out.println("#1 b. answer: "+ subtractFirstFromLast(agesTwo));
 
     //c. add all elements together, then calculate average
     double sum = 0;
@@ -27,7 +27,7 @@ public class CodingAssignementWeek3_4 {
     
  // #2
      //a. using a method to convert the string array to an integer 
-    //  array, then calculating the sum of each integer and then calculating the average
+     //   array, then calculating the sum of each integer and then calculating the average
     String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
    int[] integers = convertWordsToIntegers(names);
    double sum2 = 0;
@@ -37,14 +37,6 @@ public class CodingAssignementWeek3_4 {
    double avg = sum2 / integers.length;
    System.out.println("#2 a. answer: "+ avg);
    
-   for(int t = 0; t<names.length; t++) {
-     int result = 0;
-     result = result + names[t].length();
-     int namesAvg = result / names.length;
-     System.out.println(result);
-   }
-   
-    
     
     //b.
    System.out.println("#2 b. answer: "+ concatenateStringArray(names));
@@ -114,11 +106,10 @@ public class CodingAssignementWeek3_4 {
   }
  
 // #1 method
-  public static int sumOfFirstAndLast(int[]num) {
-    int sum = num[0] + num[num.length - 1];
-        return sum;
+  public static int subtractFirstFromLast(int[]num) {
+    int subtract = num[num.length - 1] - num[0];
+        return subtract;
   }
-  
   
   
 // #2 methods
