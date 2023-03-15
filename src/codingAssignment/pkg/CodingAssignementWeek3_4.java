@@ -12,7 +12,7 @@ public class CodingAssignementWeek3_4 {
     int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
     System.out.println("#1 a. answer: "+ sumOfFirstAndLast(ages));
     
-    //b. added an additional age to show my method works no matter what
+    //b. added an additional age to show my method works all the time
     int[] agesTwo = {3, 9, 23, 64, 2, 8, 28, 93, 101};
     System.out.println("#1 b. answer: "+ sumOfFirstAndLast(agesTwo));
 
@@ -36,6 +36,14 @@ public class CodingAssignementWeek3_4 {
    }
    double avg = sum2 / integers.length;
    System.out.println("#2 a. answer: "+ avg);
+   
+   for(int t = 0; t<names.length; t++) {
+     int result = 0;
+     result = result + names[t].length();
+     int namesAvg = result / names.length;
+     System.out.println(result);
+   }
+   
     
     
     //b.
@@ -106,86 +114,86 @@ public class CodingAssignementWeek3_4 {
   }
  
 // #1 method
-  public static int sumOfFirstAndLast(int[]x) {
-    int sum = x[0] + x[x.length - 1];
+  public static int sumOfFirstAndLast(int[]num) {
+    int sum = num[0] + num[num.length - 1];
         return sum;
   }
   
   
   
 // #2 methods
-  public static int[] convertWordsToIntegers(String[]x) {
-    int[] in = new int[x.length];
-    for (int j = 0; j< x.length; j++) {
-      in[j] = x[j].length();
+  public static int[] convertWordsToIntegers(String[]str) {
+    int[] num = new int[str.length];
+    for (int j = 0; j< str.length; j++) {
+      num[j] = str[j].length();
     }
-    return in;
+    return num;
   }
   
-  public static String concatenateStringArray(String[] y) {
+  public static String concatenateStringArray(String[] str) {
     String concatString = "";
-    for (int k=0; k <= y.length - 1; k++) {
-      concatString = concatString + y[k] + " ";
+    for (int i=0; i <= str.length - 1; i++) {
+      concatString = concatString + str[i] + " ";
     } return concatString;
   }
   
  // #5 method
- public static int[] nameLengthsArrayMaker(String[]z, int[]a) {
-   for(int n=0; n<a.length; n++) {
-     a[n] = z[n].length();
+ public static int[] nameLengthsArrayMaker(String[]str, int[]num) {
+   for(int i =0; i<num.length; i++) {
+     num[i] = str[i].length();
    }
-  return a;
+  return num;
  }
   
  // #7 method
- public static String concatenateStrings(String b, int c) {
+ public static String concatenateStrings(String str, int num) {
    String answer = "";
-   for(int m= 1; m<= c; m++) {
-     answer = answer + b;
+   for(int i= 1; i<= num; i++) {
+     answer = answer + str;
      }
    return answer;
  }
  
  // #8 method
- public static String fullNameCreator(String e, String f) {
-   String fullName = e + " " + f; 
+ public static String fullNameCreator(String str1, String str2) {
+   String fullName = str1 + " " + str2; 
    return fullName;
  }
  
  
  // #9 method
  public static boolean isGreaterThanHundred(int[]num) {
-   int totalNum = 0;
-   for (int p=0; p<num.length; p++) {
-     totalNum += num[p];
-   } if (totalNum > 100) {
+   int total = 0;
+   for (int i=0; i<num.length; i++) {
+     total += num[i];
+   } if (total > 100) {
      return true;
    } 
    return false;
  }
  
  // #10 method
- public static double averageOfDoubleArray(double[] g) {
-   double sm = 0;
-   for (int q= 0; q<g.length; q++) {
-     sm += g[q];
+ public static double averageOfDoubleArray(double[] num) {
+   double sum = 0;
+   for (int i= 0; i<num.length; i++) {
+     sum += num[i];
    }
-   return sm / g.length;
+   return sum / num.length;
  }
  
  
  // #11 method
- public static boolean isDoubleAvgGreater(double[] a, double[] b) {
-   double sm = 0;
-   double sm2 = 0;
-   for (int i=0; i<a.length; i++) {
-     sm += a[i];
-     double davg = sm / a.length;
+ public static boolean isDoubleAvgGreater(double[] num1, double[] num2) {
+   double sum = 0;
+   double sum2 = 0;
+   for (int i=0; i<num1.length; i++) {
+     sum += num1[i];
+     double avg = sum / num1.length;
      
-     for (int j=0; j<b.length; j++) {
-       sm2 += b[j];
-       double davg2 = sm2 / b.length;
-       if ( davg > davg2) {
+     for (int j=0; j<num2.length; j++) {
+       sum2 += num2[j];
+       double avg2 = sum2 / num2.length;
+       if ( avg > avg2) {
          return true;
        }
    }
@@ -195,8 +203,8 @@ public class CodingAssignementWeek3_4 {
  
  
  // #12 method
- public static boolean willBuyDrink(boolean x, double y) {
-   if (x == true && y > 10.50) {
+ public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+   if (isHotOutside == true && moneyInPocket > 10.50) {
      return true;
    }
    return false;
@@ -204,32 +212,32 @@ public class CodingAssignementWeek3_4 {
  
  
  // #13 method 
- public static String willYouGetTheJob(int w, boolean x, String[] b) {
-   for(int i = 0; i< b.length; i++) {
-   if(w >= 5 && x == true && b[i] == "Technology") {
-     String str = "You will definitely get the job!";
-     return str;
-   } else if(w >= 5 && x == false && b[i] == "Technology") {
-     String str = "You will likely not get the job";
-     return str;
-   } else if (w >= 5 && x == true && b[i] == "Office Administration") {
-     String str = "You will likely get the job";
-     return str;
-   } else if (w >= 5 && x == false && b[i] == "Office Administration") {
-     String str = "You will likely not the job";
-     return str;
-   } else if (w < 5 && x == true && b[i] == "Technology") {
-     String str = "You might get the job";
-     return str;     
-   } else if (w < 5 && x == true && b[i] == "Office Administration") {
-     String str = "You may get this job";
-     return str; 
-   } else if (w < 5 && x == false && b[i] == "Technology") {
-     String str = "You will surely not the job";
-     return str; 
-   } else if (w < 5 && x == false && b[i] == "Office Administration") {
-     String str = "You will absolutely not the job";
-     return str; 
+ public static String willYouGetTheJob(int num, boolean x, String[] str) {
+   for(int i = 0; i< str.length; i++) {
+   if(num >= 5 && x == true && str[i] == "Technology") {
+     String predict = "You will definitely get the job!";
+     return predict;
+   } else if(num >= 5 && x == false && str[i] == "Technology") {
+     String predict = "You will likely not get the job";
+     return predict;
+   } else if (num >= 5 && x == true && str[i] == "Office Administration") {
+     String predict = "You will likely get the job";
+     return predict;
+   } else if (num >= 5 && x == false && str[i] == "Office Administration") {
+     String predict = "You will likely not the job";
+     return predict;
+   } else if (num < 5 && x == true && str[i] == "Technology") {
+     String predict = "You might get the job";
+     return predict;     
+   } else if (num < 5 && x == true && str[i] == "Office Administration") {
+     String predict = "You may get this job";
+     return predict; 
+   } else if (num < 5 && x == false && str[i] == "Technology") {
+     String predict = "You will surely not the job";
+     return predict; 
+   } else if (num < 5 && x == false && str[i] == "Office Administration") {
+     String predict = "You will absolutely not the job";
+     return predict; 
 }
  }
   return "something went wrong";
